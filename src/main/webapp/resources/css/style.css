@@ -1,0 +1,18 @@
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+header nav.navbar {
+    background-color: #062a44;
+}
+
+header nav.navbar .logo {
+    width: 48px;
+}
+
+header nav.navbar .navbar-brand .high-light {
+    font-weight: bold;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+}
+

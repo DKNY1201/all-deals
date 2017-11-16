@@ -9,16 +9,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" href="../../../../favicon.ico">
+	<link rel="icon" href="<c:url value="/img/favicon.ico"></c:url>">
 
 	<title><tiles:insertAttribute name="title" /></title>
 
-	<!-- Bootstrap core CSS -->
-
-	<link href="<c:url value="/resources/css/bootstrap.min.css"></c:url>" rel="stylesheet">
+	<link href="<c:url value="/css/bootstrap.min.css"></c:url>" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="<c:url value="/resources/css/style.css"></c:url>" rel="stylesheet">
+	<link href="<c:url value="/css/style.css"></c:url>" rel="stylesheet">
+
 </head>
 <body>
 	<%--<section class="container">--%>
