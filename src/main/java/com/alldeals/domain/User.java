@@ -42,9 +42,9 @@ public class User {
 //	@NotEmpty(message = "*Please provide your password")
 	private String password;
 	
-	@Column(name = "name")
+	@Column(name = "first_name")
 //	@NotEmpty(message = "*Please provide your name")
-	private String name;
+	private String firstName;
 	
 	@Column(name = "last_name")
 //	@NotEmpty(message = "*Please provide your last name")
@@ -74,11 +74,11 @@ public class User {
 	}
 
 	public String getName() {
-		return name;
+		return firstName;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.firstName = name;
 	}
 
 	public String getLastName() {

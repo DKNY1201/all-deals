@@ -28,7 +28,14 @@
 		<%--</div>--%>
 	<%--</section>--%>
 	<tiles:insertAttribute name="navigation" />
-	<tiles:insertAttribute name="content" />
+	<div class="container wrapper">
+		<div class="row">
+			<div class="col-sm-12">
+				<tiles:insertAttribute name="content" />
+			</div>
+		</div>
+	</div>
 	<tiles:insertAttribute name="footer" />
+	<tiles:insertAttribute name="jslib" />
 </body>
 </html>
