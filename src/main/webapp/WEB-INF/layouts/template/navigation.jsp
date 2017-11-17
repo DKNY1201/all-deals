@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <a class="navbar-brand" href="<spring:url value="/" />">
@@ -12,7 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a href="<spring:url value="/market/products"/>" class="nav-link">Deals <span class="sr-only">(current)</span></a>
+                    <a href="<spring:url value="/market/products"/>" class="nav-link">Deals</a>
                 </li>
                 <li class="nav-item">
                     <a href="<spring:url value="/market/products"/>" class="nav-link">Store</a>
@@ -30,10 +31,10 @@
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="<spring:url value="/market/products"/>" class="nav-link">Login</a>
+                    <a href="<spring:url value="/login"/>" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<spring:url value="/market/products"/>" class="nav-link">Logout</a>
+                    <a href="<spring:url value="/register"/>" class="nav-link">Register</a>
                 </li>
             </ul>
         </div>

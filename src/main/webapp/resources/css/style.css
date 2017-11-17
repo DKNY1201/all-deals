@@ -3,7 +3,7 @@ body {
 }
 
 .wrapper {
-    margin-top: 70px;
+    margin-top: 80px;
 }
 
 header nav.navbar {
@@ -19,4 +19,11 @@ header nav.navbar .navbar-brand .high-light {
     font-family: 'Montserrat', Helvetica, Arial, sans-serif;
     font-size: 1.2em;
 }
+
+.wrapper .title{
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #cccccc;
+}
+
 
