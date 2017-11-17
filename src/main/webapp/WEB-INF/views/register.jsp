@@ -29,11 +29,6 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="birthday"><spring:message code="label.birthday" /></label>
-        <form:input class="form-control" id="birthday" placeholder="Birthday" path="birthDay" />
-        <div class="error"><form:errors path="birthDay" /></div>
-    </div>
-    <div class="form-group">
         <label for="address"><spring:message code="label.address" /></label>
         <form:input type="text" class="form-control" id="address"
                     placeholder="Apartment, studio, or floor" path="address.street" />
@@ -46,13 +41,13 @@
             <div class="error"><form:errors path="address.city" /></div>
         </div>
         <div class="form-group col-md-4">
-            <label for="state"><spring:message code="label.state" />State</label>
+            <label for="state"><spring:message code="label.state" /></label>
             <form:input type="text" class="form-control" id="state" placeholder="State" path="address.state" />
             <div class="error"><form:errors path="address.state" /></div>
         </div>
         <div class="form-group col-md-2">
-            <label for="zip"><spring:message code="label.zip" />Zip</label>
-            <input type="text" class="form-control" id="zip" placeholder="52556" path="address.zip">
+            <label for="zip"><spring:message code="label.zip" /></label>
+            <form:input type="text" class="form-control" id="zip" placeholder="52556" path="address.zip" />
             <div class="error"><form:errors path="address.zip" /></div>
         </div>
     </div>

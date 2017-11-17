@@ -5,31 +5,32 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 /**
  * Created by Bi on 11/16/17.
  */
 @Entity(name = "address")
-public class Address {
+public class Address implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "address_id")
     private Long id;
 
-    @NotEmpty(message = "*Please provide your password")
+    @NotEmpty(message = "{NotEmpty.validation}")
     private String street;
 
-    @NotEmpty(message = "*Please provide your password")
+    @NotEmpty(message = "{NotEmpty.validation}")
     private String city;
 
-    @Size(min = 2, max = 2, message = "*Please provide your password")
-    @Pattern(regexp = "^[A-Z]{2,2}$")
-    @NotEmpty(message = "*Please provide your password")
+    @Size(min = 2, max = 2, message = "{Size.Address.state.validation}")
+    @Pattern(regexp = "^[A-Z]{2,2}$", message = "{Pattern.Address.state.validation}")
+    @NotEmpty(message = "{NotEmpty.validation}")
     private String state;
 
-    @NotEmpty(message = "*Please provide your password")
-    @Pattern(regexp = "^[\\d]{5,5}$")
+    @Pattern(regexp = "^[\\d]{5,5}$", message = "{Pattern.Address.zip.validation}")
+    @NotEmpty(message = "{NotEmpty.validation}")
     private String zip;
 
     public Address() {}

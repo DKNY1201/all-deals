@@ -1,7 +1,6 @@
 package com.alldeals.domain;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -10,7 +9,6 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "user")
@@ -22,33 +20,25 @@ public class User implements Serializable {
 	private int id;
 
 	@Email(message = "{Email.User.email.validation}")
+	@NotEmpty(message = "{NotEmpty.validation}")
 	@Column(name = "email")
-//	@Email(message = "*Please provide a valid Email")
-	@NotEmpty(message = "*Please provide an email")
 	private String email;
 	
 	@Column(name = "password")
 	@Size(min = 6, message = "{Size.User.password.validation}")
-	@NotEmpty(message = "*Please provide your password")
+	@NotEmpty(message = "{NotEmpty.validation}")
 	private String password;
 
-	@NotEmpty(message = "*Please provide your password")
+	@NotEmpty(message = "{NotEmpty.validation}")
 	@Column(name = "first_name")
-//	@NotEmpty(message = "*Please provide your name")
 	private String firstName;
 
-	@NotEmpty(message = "*Please provide your password")
+	@NotEmpty(message = "{NotEmpty.validation}")
 	@Column(name = "last_name")
-//	@NotEmpty(message = "*Please provide your last name")
 	private String lastName;
 	
 	@Column(name = "active")
 	private int active;
-
-	@Column(name = "birthday")
-	@DateTimeFormat(pattern = "mm/dd/yyyy")
-	@NotEmpty(message = "*Please provide your password")
-	private Date birthDay;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id", nullable = false)
@@ -121,14 +111,6 @@ public class User implements Serializable {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
-	}
-
-	public Date getBirthDay() {
-		return birthDay;
-	}
-
-	public void setBirthDay(Date birthDay) {
-		this.birthDay = birthDay;
 	}
 
 	public Address getAddress() {
