@@ -1,18 +1,20 @@
 package com.alldeals.domain;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,14 +28,16 @@ public class User {
 	private String email;
 	
 	@Column(name = "password")
-//	@Length(min = 5, message = "*Your password must have at least 5 characters")
-//	@NotEmpty(message = "*Please provide your password")
+	@Size(min = 6, message = "{Size.User.password.validation}")
+	@NotEmpty(message = "*Please provide your password")
 	private String password;
-	
+
+	@NotEmpty(message = "*Please provide your password")
 	@Column(name = "first_name")
 //	@NotEmpty(message = "*Please provide your name")
 	private String firstName;
-	
+
+	@NotEmpty(message = "*Please provide your password")
 	@Column(name = "last_name")
 //	@NotEmpty(message = "*Please provide your last name")
 	private String lastName;
@@ -43,10 +47,12 @@ public class User {
 
 	@Column(name = "birthday")
 	@DateTimeFormat(pattern = "mm/dd/yyyy")
+	@NotEmpty(message = "*Please provide your password")
 	private Date birthDay;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id", nullable = false)
+	@Valid
 	private Address address;
 	
 	@ManyToMany(cascade = CascadeType.ALL)

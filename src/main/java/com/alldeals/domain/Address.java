@@ -1,6 +1,10 @@
 package com.alldeals.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  * Created by Bi on 11/16/17.
@@ -13,12 +17,19 @@ public class Address {
     @Column(name = "address_id")
     private Long id;
 
+    @NotEmpty(message = "*Please provide your password")
     private String street;
 
+    @NotEmpty(message = "*Please provide your password")
     private String city;
 
+    @Size(min = 2, max = 2, message = "*Please provide your password")
+    @Pattern(regexp = "^[A-Z]{2,2}$")
+    @NotEmpty(message = "*Please provide your password")
     private String state;
 
+    @NotEmpty(message = "*Please provide your password")
+    @Pattern(regexp = "^[\\d]{5,5}$")
     private String zip;
 
     public Address() {}
