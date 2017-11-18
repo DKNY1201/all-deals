@@ -7,6 +7,7 @@ import com.alldeals.repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,6 +20,8 @@ public class DealServiceImpl implements DealService {
 
     @Override
     public void save(Deal deal) {
+        Date today = new Date();
+        deal.setPostDate(today);
         dealRepository.save(deal);
     }
 }

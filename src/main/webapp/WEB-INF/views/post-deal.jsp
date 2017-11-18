@@ -47,5 +47,19 @@
         <form:input type="file" class="form-control" id="dealImage" path="dealImage" />
         <div class="error"><form:errors path="dealImage" /></div>
     </div>
+    <div class="form-row">
+        <div class="form-check">
+            <label class="form-check-label">
+                <form:checkbox class="form-check-input" path="isFeature" />
+                Feature deal
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <form:checkbox class="form-check-input" path="isFrontPage" />
+                Frontpage deal
+            </label>
+        </div>
+    </div>
     <button type="submit" class="btn btn-primary"><spring:message code="button.postdeal" /></button>
 </form:form>

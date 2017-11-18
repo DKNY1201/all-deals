@@ -43,8 +43,10 @@ public class DealController {
     }
 
     @PostMapping("/post")
-    public String postDeal(@Valid Deal deal, BindingResult bindingResult, HttpServletRequest request) {
+    public String postDeal(@Valid Deal deal, BindingResult bindingResult, HttpServletRequest request, Model model) {
         if (bindingResult.hasErrors()) {
+            model.addAttribute("categories", dealCategoryService.findAll());
+            model.addAttribute("stores", storeService.findAll());
             return "post-deal";
         }
 
@@ -52,7 +54,8 @@ public class DealController {
         MultipartFile dealImage = deal.getDealImage();
         if (dealImage != null && !dealImage.isEmpty()) {
             try {
-                dealImage.transferTo(new File(rootDirectory + "/resources/images/deals/" + deal.getId() + ".jpg"));
+                dealImage.transferTo(new File(rootDirectory + "/resources/images/deals/" + deal.getDealTitle()
+                        + deal.getPrice()+ deal.getStore().getName() + ".jpg"));
             } catch (Exception e) {
                 throw new RuntimeException("Deal image saving failed", e);
             }

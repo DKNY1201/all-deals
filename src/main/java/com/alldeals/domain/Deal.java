@@ -44,14 +44,17 @@ public class Deal {
     private String description;
 
     @Valid
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "deal_cat_id", nullable = false)
     private DealCategory dealCategory;
 
     @Valid
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "store_id", nullable = false)
     private Store store;
+
+    private Boolean isFeature;
+    private Boolean isFrontPage;
 
     @JsonIgnore
     @Transient
@@ -129,5 +132,21 @@ public class Deal {
 
     public void setDealImage(MultipartFile dealImage) {
         this.dealImage = dealImage;
+    }
+
+    public Boolean getIsFeature() {
+        return isFeature;
+    }
+
+    public void setIsFeature(Boolean feature) {
+        isFeature = feature;
+    }
+
+    public Boolean getIsFrontPage() {
+        return isFrontPage;
+    }
+
+    public void setIsFrontPage(Boolean frontPage) {
+        isFrontPage = frontPage;
     }
 }

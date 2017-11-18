@@ -1,8 +1,11 @@
 package com.alldeals.domain;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Bi on 11/17/17.
@@ -14,11 +17,24 @@ public class Store {
     @Column(name = "store_id")
     private int id;
 
-    @NotEmpty(message = "{NotEmpty.validation}")
+//    @NotEmpty(message = "{NotEmpty.validation}")
     @Column(name = "store_name")
     private String name;
 
     private String description;
+
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @Fetch(FetchMode.JOIN)
+//    @JoinTable(name = "deal_store")
+//    private List<Deal> deal;
+//
+//    public List<Deal> getDeal() {
+//        return deal;
+//    }
+//
+//    public void setDeal(List<Deal> deal) {
+//        this.deal = deal;
+//    }
 
     public Store() {
     }
