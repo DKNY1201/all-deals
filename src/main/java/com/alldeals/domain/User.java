@@ -6,10 +6,14 @@ import java.util.Set;
 
 import javax.persistence.*;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlTransient;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "user")
@@ -49,6 +53,11 @@ public class User implements Serializable {
 	@ManyToMany(cascade = CascadeType.MERGE)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private List<Role> roles;
+
+	@JsonIgnore
+	@Transient
+	@NotNull(message = "{NotNull.validation}")
+	private MultipartFile profilePicture;
 
 	public int getId() {
 		return id;
@@ -120,5 +129,14 @@ public class User implements Serializable {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	@XmlTransient
+	public MultipartFile getProfilePicture() {
+		return profilePicture;
+	}
+
+	public void setProfilePicture(MultipartFile profilePicture) {
+		this.profilePicture = profilePicture;
 	}
 }

@@ -19,6 +19,10 @@ header nav.navbar .logo {
     width: 48px;
 }
 
+header nav.navbar .post-a-deal {
+    color: rgba(255,255,255, 1) !important;
+}
+
 header nav.navbar .navbar-brand .high-light {
     font-weight: bold;
     font-family: 'Montserrat', Helvetica, Arial, sans-serif;

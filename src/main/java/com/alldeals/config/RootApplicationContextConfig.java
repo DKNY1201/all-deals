@@ -1,5 +1,7 @@
 package com.alldeals.config;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import javax.persistence.EntityManagerFactory;
@@ -41,6 +43,7 @@ public class RootApplicationContextConfig {
 		factory.setPackagesToScan("com.alldeals.domain");
 		factory.setDataSource(dataSource());
 		factory.afterPropertiesSet();
+//		factory.setJpaPropertyMap(hibernateJpaProperties());
 		factory.setJpaProperties(additionalProperties());
 		return factory.getObject();
 	}
@@ -49,10 +52,22 @@ public class RootApplicationContextConfig {
 		Properties properties = new Properties();
 		properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));
 		properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
-		properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
-		properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
-		properties.put("hibernate.hbm2ddl.import_files",
-				environment.getRequiredProperty("hibernate.hbm2ddl.import_files"));
+		properties.put("hibernate.hbm2ddl.import_files", environment.getRequiredProperty("hibernate.hbm2ddl.import_files"));
+		return properties;
+	}
+
+	private Map<String, ?> hibernateJpaProperties() {
+		HashMap<String, String> properties = new HashMap<>();
+		properties.put("hibernate.hbm2ddl.auto", "create");
+		properties.put("hibernate.show_sql", "false");
+		properties.put("hibernate.format_sql", "false");
+		properties.put("hibernate.hbm2ddl.import_files", "src/main/sql/import.sql");
+		properties.put("hibernate.ejb.naming_strategy", "org.hibernate.cfg.ImprovedNamingStrategy");
+
+		properties.put("hibernate.c3p0.min_size", "2");
+		properties.put("hibernate.c3p0.max_size", "5");
+		properties.put("hibernate.c3p0.timeout", "300"); // 5mins
+
 		return properties;
 	}
 

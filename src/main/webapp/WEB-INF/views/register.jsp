@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <h1 class="title"><spring:message code="register.title" /></h1>
-<form:form modelAttribute="user">
+<form:form modelAttribute="user" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="email"><spring:message code="label.email" /></label>
         <form:input class="form-control" id="email" placeholder="Enter email" path="email" />
@@ -50,6 +50,11 @@
             <form:input type="text" class="form-control" id="zip" placeholder="52556" path="address.zip" />
             <div class="error"><form:errors path="address.zip" /></div>
         </div>
+    </div>
+    <div class="form-group">
+        <label for="profile-picture"><spring:message code="label.profile-picture" /></label>
+        <form:input type="file" class="form-control" id="profile-picture" path="profilePicture" />
+        <div class="error"><form:errors path="profilePicture" /></div>
     </div>
     <button type="submit" class="btn btn-primary"><spring:message code="button.signup" /></button>
 </form:form>
