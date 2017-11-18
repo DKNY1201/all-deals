@@ -1,6 +1,7 @@
 package com.alldeals.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -11,6 +12,8 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlTransient;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
+import org.hibernate.FetchMode;
+import org.hibernate.annotations.Fetch;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
@@ -56,8 +59,15 @@ public class User implements Serializable {
 
 	@JsonIgnore
 	@Transient
-	@NotNull(message = "{NotNull.validation}")
 	private MultipartFile profilePicture;
+
+	@OneToMany(
+			mappedBy = "user",
+			cascade = CascadeType.ALL,
+			fetch = FetchType.EAGER,
+			orphanRemoval = true
+	)
+	private List<Deal> deals = new ArrayList<>();
 
 	public int getId() {
 		return id;
@@ -138,5 +148,23 @@ public class User implements Serializable {
 
 	public void setProfilePicture(MultipartFile profilePicture) {
 		this.profilePicture = profilePicture;
+	}
+
+	public List<Deal> getDeals() {
+		return deals;
+	}
+
+	public void setDeals(List<Deal> deals) {
+		this.deals = deals;
+	}
+
+	public void addDeal(Deal deal) {
+		deals.add(deal);
+		deal.setUser(this);
+	}
+
+	public void removeDeal(Deal deal) {
+		deals.remove(deal);
+		deal.setUser(null);
 	}
 }

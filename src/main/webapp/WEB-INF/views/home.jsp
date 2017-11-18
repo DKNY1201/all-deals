@@ -1,13 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+
 <main role="main">
-    <%--<c:forEach items="${featureDeals}" var="featureDeal">--%>
-        <%--${featureDeal.dealTitle}--%>
-    <%--</c:forEach>--%>
-    <%--<c:forEach items="${frontpageDeals}" var="frontpageDeal">--%>
-        <%--${frontpageDeal.dealTitle}--%>
-    <%--</c:forEach>--%>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <c:forEach items="${featureDeals}" var="featureDeal" varStatus="status">
@@ -22,7 +17,7 @@
                         <div class="carousel-caption text-left">
                             <h1>${featureDeal.dealTitle}</h1>
                             <p>${featureDeal.description}</p>
-                            <p><a class="btn btn-lg btn-primary" href="<spring:url value="/deals/detail/${featureDeal.id}"/>" role="button">Deal detail</a></p>
+                            <p><a class="btn btn-lg btn-success" href="<spring:url value="/deals/detail/${featureDeal.id}"/>" role="button">Deal detail</a></p>
                         </div>
                     </div>
                 </div>
@@ -37,11 +32,6 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container frontpage-deals">
         <h1>Frontpage deals</h1>

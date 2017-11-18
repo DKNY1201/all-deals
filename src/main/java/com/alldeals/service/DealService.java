@@ -2,6 +2,7 @@ package com.alldeals.service;
 
 import com.alldeals.domain.Deal;
 import com.alldeals.domain.Store;
+import org.springframework.security.core.Authentication;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface DealService {
     List<Deal> getFeatureDeals();
 
     List<Deal> getFrontpageDeals();
+
+    Deal findOne(Long dealId);
 }

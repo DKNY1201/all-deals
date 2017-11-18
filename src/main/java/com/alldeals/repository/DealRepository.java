@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Bi on 11/18/17.
  */
 @Repository
-public interface DealRepository extends CrudRepository<Deal, Integer>{
+public interface DealRepository extends CrudRepository<Deal, Long>{
     @Query(value = "SELECT * FROM deal d WHERE d.isFeature = true", nativeQuery = true)
     List<Deal> getFeatureDeals();
 

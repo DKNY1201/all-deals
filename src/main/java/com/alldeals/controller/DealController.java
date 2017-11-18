@@ -6,14 +6,12 @@ import com.alldeals.domain.Store;
 import com.alldeals.service.DealCategoryService;
 import com.alldeals.service.DealService;
 import com.alldeals.service.StoreService;
+import com.alldeals.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,11 +33,15 @@ public class DealController {
     @Autowired
     DealService dealService;
 
+    @Autowired
+    UserService userService;
+
     @GetMapping("/post")
     public String postDealForm(@ModelAttribute("deal") Deal deal, Model model) {
         model.addAttribute("categories", dealCategoryService.findAll());
         model.addAttribute("stores", storeService.findAll());
-        return "post-deal";
+        model.addAttribute("user", deal.getUser());
+        return "deal-post";
     }
 
     @PostMapping("/post")
@@ -47,7 +49,7 @@ public class DealController {
         if (bindingResult.hasErrors()) {
             model.addAttribute("categories", dealCategoryService.findAll());
             model.addAttribute("stores", storeService.findAll());
-            return "post-deal";
+            return "deal-post";
         }
 
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
@@ -69,5 +71,11 @@ public class DealController {
         dealService.save(deal);
 
         return "redirect:/home";
+    }
+
+    @GetMapping("/detail/{id}")
+    public String dealDetail(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("deal", dealService.findOne(id));
+        return "deal-detail";
     }
 }

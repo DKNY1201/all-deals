@@ -26,8 +26,13 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="content" value="/WEB-INF/views/register.jsp"/>
     </definition>
 
-    <definition name="post-deal" extends="baseLayout">
+    <definition name="deal-post" extends="baseLayout">
         <put-attribute name="title" value="Post a Deal"/>
-        <put-attribute name="content" value="/WEB-INF/views/post-deal.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/views/deal-post.jsp"/>
+    </definition>
+
+    <definition name="deal-detail" extends="baseLayout">
+        <put-attribute name="title" value="Deal detail"/>
+        <put-attribute name="content" value="/WEB-INF/views/deal-detail.jsp"/>
     </definition>
 </tiles-definitions>

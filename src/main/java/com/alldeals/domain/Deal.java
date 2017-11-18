@@ -58,8 +58,11 @@ public class Deal {
 
     @JsonIgnore
     @Transient
-    @NotNull(message = "{NotNull.validation}")
     private MultipartFile dealImage;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Long getId() {
         return id;
@@ -148,5 +151,24 @@ public class Deal {
 
     public void setIsFrontPage(Boolean frontPage) {
         isFrontPage = frontPage;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Deal )) return false;
+        return id != null && id.equals(((Deal) o).id);
+    }
+    @Override
+    public int hashCode() {
+        return 31;
     }
 }

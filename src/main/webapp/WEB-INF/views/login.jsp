@@ -31,7 +31,7 @@
     </div>
     <div class="form-check">
         <label>
-            <input type='checkbox' name="remember-me"/> Remember Me?
+            <input type="checkbox" name="remember-me"/> Remember Me?
         </label>
     </div>
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
