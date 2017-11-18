@@ -10,4 +10,8 @@ import java.util.List;
  */
 public interface DealService {
     void save(Deal deal);
+
+    List<Deal> getFeatureDeals();
+
+    List<Deal> getFrontpageDeals();
 }

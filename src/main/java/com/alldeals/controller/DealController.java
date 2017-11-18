@@ -54,8 +54,7 @@ public class DealController {
         MultipartFile dealImage = deal.getDealImage();
         if (dealImage != null && !dealImage.isEmpty()) {
             try {
-                dealImage.transferTo(new File(rootDirectory + "/resources/images/deals/" + deal.getDealTitle()
-                        + deal.getPrice()+ deal.getStore().getName() + ".jpg"));
+                dealImage.transferTo(new File(rootDirectory + "/resources/images/deals/" + deal.getDealTitle() + ".jpg"));
             } catch (Exception e) {
                 throw new RuntimeException("Deal image saving failed", e);
             }

@@ -29,8 +29,10 @@
         <label for="password"><spring:message code="label.password" /></label>
         <input class="form-control" id="password" placeholder="Password" name="password" type="password"/>
     </div>
-    <div class="form-group">
-        <input type='checkbox' name="remember-me"/> Remember Me?
+    <div class="form-check">
+        <label>
+            <input type='checkbox' name="remember-me"/> Remember Me?
+        </label>
     </div>
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <button type="submit" class="btn btn-primary"><spring:message code="button.signin" /></button>

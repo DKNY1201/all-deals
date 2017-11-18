@@ -1,6 +1,9 @@
 package com.alldeals.controller;
 
+import com.alldeals.service.DealService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -10,9 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+    @Autowired
+    DealService dealService;
 
     @GetMapping({"/", "/home"})
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("featureDeals", dealService.getFeatureDeals());
+        model.addAttribute("frontpageDeals", dealService.getFrontpageDeals());
         return "home";
     }
 }

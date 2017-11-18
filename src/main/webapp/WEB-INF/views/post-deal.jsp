@@ -53,7 +53,7 @@
                 <form:checkbox class="form-check-input" path="isFeature" />
                 Feature deal
             </label>
-        </div>
+        </div>&nbsp;
         <div class="form-check">
             <label class="form-check-label">
                 <form:checkbox class="form-check-input" path="isFrontPage" />

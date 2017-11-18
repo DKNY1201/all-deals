@@ -24,4 +24,14 @@ public class DealServiceImpl implements DealService {
         deal.setPostDate(today);
         dealRepository.save(deal);
     }
+
+    @Override
+    public List<Deal> getFeatureDeals() {
+        return (List<Deal>) dealRepository.getFeatureDeals();
+    }
+
+    @Override
+    public List<Deal> getFrontpageDeals() {
+        return dealRepository.getFrontpageDeals();
+    }
 }
