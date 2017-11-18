@@ -5,6 +5,7 @@ import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,13 +29,14 @@ public class DealCategory {
 //    @JoinTable(name = "deal_cat_deal")
 //    private List<Deal> deal;
 //
-//    public List<Deal> getDeal() {
-//        return deal;
-//    }
-//
-//    public void setDeal(List<Deal> deal) {
-//        this.deal = deal;
-//    }
+
+    @OneToMany(
+            mappedBy = "dealCategory",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER,
+            orphanRemoval = true
+    )
+    private List<Deal> deals = new ArrayList<>();
 
     public DealCategory() {
     }
@@ -66,5 +68,13 @@ public class DealCategory {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Deal> getDeal() {
+        return deals;
+    }
+
+    public void setDeal(List<Deal> deal) {
+        this.deals = deal;
     }
 }

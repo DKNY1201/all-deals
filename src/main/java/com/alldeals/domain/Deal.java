@@ -43,14 +43,12 @@ public class Deal {
     @Column(name="description", columnDefinition="TEXT")
     private String description;
 
-    @Valid
-    @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "deal_cat_id", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "deal_cat_id")
     private DealCategory dealCategory;
 
-    @Valid
-    @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "store_id", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "store_id")
     private Store store;
 
     private Boolean isFeature;

@@ -158,3 +158,10 @@ header nav.navbar .navbar-brand .high-light {
     float: left;
     margin-right: 10px;
 }
+
+.frontpage-deals h1{
+    font-size: 24px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 20px;
+}

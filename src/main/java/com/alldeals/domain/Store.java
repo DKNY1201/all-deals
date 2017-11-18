@@ -5,6 +5,7 @@ import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,6 +37,14 @@ public class Store {
 //        this.deal = deal;
 //    }
 
+    @OneToMany(
+            mappedBy = "store",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER,
+            orphanRemoval = true
+    )
+    private List<Deal> deals = new ArrayList<>();
+
     public Store() {
     }
 
@@ -66,5 +75,13 @@ public class Store {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Deal> getDeal() {
+        return deals;
+    }
+
+    public void setDeal(List<Deal> deal) {
+        this.deals = deal;
     }
 }
