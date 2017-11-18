@@ -24,7 +24,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="last-name"><spring:message code="label.lastname" /></label>
-            <form:input type="password" class="form-control" id="last-name" placeholder="Last name" path="lastName" />
+            <form:input class="form-control" id="last-name" placeholder="Last name" path="lastName" />
             <div class="error"><form:errors path="lastName" /></div>
         </div>
     </div>

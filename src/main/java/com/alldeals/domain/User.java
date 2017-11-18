@@ -1,6 +1,7 @@
 package com.alldeals.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -15,7 +16,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class User implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
 	private int id;
 
@@ -45,9 +46,9 @@ public class User implements Serializable {
 	@Valid
 	private Address address;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.MERGE)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private Set<Role> roles;
+	private List<Role> roles;
 
 	public int getId() {
 		return id;
@@ -97,11 +98,11 @@ public class User implements Serializable {
 		this.active = active;
 	}
 
-	public Set<Role> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
 

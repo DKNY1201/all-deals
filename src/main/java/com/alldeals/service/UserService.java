@@ -7,4 +7,6 @@ import com.alldeals.domain.User;
  */
 public interface UserService {
     void save(User user);
+
+    User findUserByEmail(String email);
 }

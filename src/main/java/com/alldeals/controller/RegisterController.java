@@ -27,11 +27,18 @@ public class RegisterController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String createUser(@Valid User user, BindingResult bindingResult) {
+        User existingUser = userService.findUserByEmail(user.getEmail());
+        if (existingUser != null) {
+            bindingResult.rejectValue("email", "Email.duplicate",
+                    "There is already a user registered with the email provided");
+            return "register";
+        }
+
         if (bindingResult.hasErrors()) {
             return "register";
         }
-        userService.save(user);
 
+        userService.save(user);
         return "redirect:/login";
     }
 }
