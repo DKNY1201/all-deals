@@ -1,9 +1,5 @@
 package com.alldeals.domain;
 
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,17 +14,11 @@ public class DealCategory {
     @Column(name = "deal_cat_id")
     private int id;
 
-//    @NotEmpty(message = "{NotEmpty.validation}")
     @Column(name = "deal_cat_name")
     private String name;
 
+    @Column(name="description", columnDefinition="TEXT")
     private String description;
-
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @Fetch(FetchMode.JOIN)
-//    @JoinTable(name = "deal_cat_deal")
-//    private List<Deal> deal;
-//
 
     @OneToMany(
             mappedBy = "dealCategory",
