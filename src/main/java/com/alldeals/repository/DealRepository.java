@@ -20,5 +20,8 @@ public interface DealRepository extends CrudRepository<Deal, Long>{
     List<Deal> getFrontpageDeals();
 
     @Query(value = "SELECT * FROM deal d WHERE d.deal_cat_id = :catId", nativeQuery = true)
-    List<Deal> getDealsByCategory(@Param("catId") int catId);
+    List<Deal> findDealsByCategory(@Param("catId") int catId);
+
+    @Query(value = "SELECT * FROM deal d WHERE d.store_id = :storeId", nativeQuery = true)
+    List<Deal> findDealsByStore(@Param("storeId") int storeId);
 }

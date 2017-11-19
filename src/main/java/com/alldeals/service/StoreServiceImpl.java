@@ -24,4 +24,9 @@ public class StoreServiceImpl implements StoreService {
     public Store findOne(Integer storeId) {
         return storeRepository.findOne(storeId);
     }
+
+    @Override
+    public List<Store> getRelatedStores(Integer storeId) {
+        return storeRepository.getRelatedStores(storeId);
+    }
 }

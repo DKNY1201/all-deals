@@ -17,7 +17,7 @@
                     <a href="<spring:url value="/deals/categories/0"/>" class="nav-link">Deals</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<spring:url value="/market/products"/>" class="nav-link">Store</a>
+                    <a href="<spring:url value="/stores/1"/>" class="nav-link">Store</a>
                 </li>
                 <li class="nav-item">
                     <a href="<spring:url value="/market/products"/>" class="nav-link">Deal Alert</a>

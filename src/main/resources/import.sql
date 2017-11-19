@@ -11,7 +11,7 @@ INSERT INTO `deal_cat` VALUES (6, 'Other', 'Other');
 INSERT INTO `store` VALUES (1, 'Walmart', 'Walmart');
 INSERT INTO `store` VALUES (2, 'Amazon', 'Amazon');
 INSERT INTO `store` VALUES (3, 'Ebay', 'Ebay');
-INSERT INTO `store` VALUES (4, 'Cosco', 'Cosco');
+INSERT INTO `store` VALUES (4, 'Target', 'Target');
 INSERT INTO `store` VALUES (5, 'BestBuy', 'BestBuy');
 INSERT INTO `store` VALUES (6, 'Other', 'Other');
 

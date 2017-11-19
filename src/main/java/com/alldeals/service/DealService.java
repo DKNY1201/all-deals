@@ -20,5 +20,7 @@ public interface DealService {
 
     List<Deal> findAll();
 
-    List<Deal> findDealsByCategory(int category);
+    List<Deal> findDealsByCategory(int catId);
+
+    List<Deal> findDealsByStore(int storeId);
 }

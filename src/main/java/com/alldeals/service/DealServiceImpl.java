@@ -63,6 +63,11 @@ public class DealServiceImpl implements DealService {
 
     @Override
     public List<Deal> findDealsByCategory(int dealCatId) {
-        return dealRepository.getDealsByCategory(dealCatId);
+        return dealRepository.findDealsByCategory(dealCatId);
+    }
+
+    @Override
+    public List<Deal> findDealsByStore(int storeId) {
+        return dealRepository.findDealsByStore(storeId);
     }
 }

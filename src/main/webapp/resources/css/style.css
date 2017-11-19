@@ -232,27 +232,32 @@ header nav.navbar .navbar-brand .high-light {
     font-size: 14px;
 }
 
-.deal-list .filters .filter-title {
+.filters {
+    border-right: 1px solid #cccccc;
+    padding: 0 10px;
+}
+
+.filters .filter-title {
     font-size: 18px;
     border-bottom: 1px dotted #ccc;
     padding-bottom: 10px;
 }
 
-.deal-list .filters ul {
+.filters ul {
     padding: 0;
 }
 
-.deal-list .filters ul li {
+.filters ul li {
     list-style: none;
     font-size: 13px;
     padding-bottom: 5px;
 }
 
-.deal-list .filters ul li a {
+.filters ul li a {
     color: #000000;
 }
 
-.deal-list .filters ul li a:hover {
+.filters ul li a:hover {
     text-decoration: none;
     color: #0072bc;
 }
