@@ -1,5 +1,23 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!-- FOOTER -->
-<footer class="container">
-    <p class="float-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+<footer class="fluid-container row">
+    <div class="copyright col-lg-6"><i class="fa fa-copyright"></i> 2017 allDeals, Inc. | <a href="#">Privacy</a> | <a href="#">Terms</a></div>
+    <div class="col-lg-6">
+        <ul>
+            <li class="nav-item active">
+                <a href="<spring:url value="/deals/categories/0"/>" class="nav-link">Deals</a>
+            </li>
+            <li class="nav-item">
+                <a href="<spring:url value="/market/products"/>" class="nav-link">Store</a>
+            </li>
+            <li class="nav-item">
+                <a href="<spring:url value="/market/products"/>" class="nav-link">Deal Alert</a>
+            </li>
+            <li class="nav-item">
+                <a href="<spring:url value="/market/products"/>" class="nav-link">Blog</a>
+            </li>
+        </ul>
+    </div>
 </footer>

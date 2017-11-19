@@ -117,11 +117,12 @@ header nav.navbar .navbar-brand .high-light {
     margin: 30px 0;
 }
 
-.deal-detail {
+.inner-wrapper {
     padding: 30px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 20px;
+    min-height: 600px;
 }
 
 .deal-detail .deal-title {
@@ -164,4 +165,118 @@ header nav.navbar .navbar-brand .high-light {
     padding: 0 0 10px;
     border-bottom: 1px solid #cccccc;
     margin-bottom: 20px;
+}
+
+.deal-list .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.deal {
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.deal a{
+     color: #000000;
+}
+
+.deal a:hover{
+    text-decoration: none;
+}
+
+.deal .image {
+    text-align: center;
+}
+
+.deal .image img {
+    height: 100px;
+    margin: 0 auto;
+}
+
+.deal .store {
+    margin-top: 3px;
+    color: #999;
+    font-size: 12px;
+}
+
+.deal .deal-title {
+    color: #0072bc;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.deal .price-user {
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.deal .price-user .price{
+    font-weight: bold;
+    color: #76b14c;
+    float: left;
+    width: 50%;
+}
+
+.deal .price-user .user {
+    float: right;
+}
+
+.deal .comment {
+    background: #eeeeee;
+    padding: 5px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.deal-list .filters .filter-title {
+    font-size: 18px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 10px;
+}
+
+.deal-list .filters ul {
+    padding: 0;
+}
+
+.deal-list .filters ul li {
+    list-style: none;
+    font-size: 13px;
+    padding-bottom: 5px;
+}
+
+.deal-list .filters ul li a {
+    color: #000000;
+}
+
+.deal-list .filters ul li a:hover {
+    text-decoration: none;
+    color: #0072bc;
+}
+
+footer {
+    background: #062a44;
+    padding: 20px;
+    color: #fff;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #0072bc;
+}
+
+footer ul {
+    text-align: right;
+}
+
+footer ul li {
+    list-style: none;
+    display: inline-block;
 }

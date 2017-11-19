@@ -56,6 +56,7 @@ public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/pdf/**").addResourceLocations("/resources/pdf/");
 		registry.addResourceHandler("/js/**").addResourceLocations("/resources/js/");
 		registry.addResourceHandler("/css/**").addResourceLocations("/resources/css/");
+		registry.addResourceHandler("/fonts/**").addResourceLocations("/resources/fonts/");
 	}
 
 	@Bean

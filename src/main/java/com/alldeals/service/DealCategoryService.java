@@ -11,4 +11,6 @@ public interface DealCategoryService {
     List<DealCategory> findAll();
 
     DealCategory findOne(Integer dealCatId);
+
+    DealCategory getDealCategoryByName(String dealCatName);
 }

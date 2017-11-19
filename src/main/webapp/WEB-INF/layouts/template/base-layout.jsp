@@ -14,6 +14,7 @@
 	<title><tiles:insertAttribute name="title" /></title>
 
 	<link href="<c:url value="/css/bootstrap.min.css"></c:url>" rel="stylesheet">
+	<link href="<c:url value="/css/font-awesome.min.css"></c:url>" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
 
 	<!-- Custom styles for this template -->

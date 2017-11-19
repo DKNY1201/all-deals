@@ -55,4 +55,14 @@ public class DealServiceImpl implements DealService {
     public Deal findOne(Long dealId) {
         return dealRepository.findOne(dealId);
     }
+
+    @Override
+    public List<Deal> findAll() {
+        return (List<Deal>) dealRepository.findAll();
+    }
+
+    @Override
+    public List<Deal> findDealsByCategory(int dealCatId) {
+        return dealRepository.getDealsByCategory(dealCatId);
+    }
 }

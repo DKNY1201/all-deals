@@ -24,4 +24,9 @@ public class DealCategoryServiceImpl implements DealCategoryService {
     public DealCategory findOne(Integer dealCatId) {
         return dealCategoryRepository.findOne(dealCatId);
     }
+
+    @Override
+    public DealCategory getDealCategoryByName(String dealCatName) {
+        return dealCategoryRepository.getDealCategoryByName(dealCatName);
+    }
 }

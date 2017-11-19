@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a href="<spring:url value="/market/products"/>" class="nav-link">Deals</a>
+                    <a href="<spring:url value="/deals/categories/0"/>" class="nav-link">Deals</a>
                 </li>
                 <li class="nav-item">
                     <a href="<spring:url value="/market/products"/>" class="nav-link">Store</a>

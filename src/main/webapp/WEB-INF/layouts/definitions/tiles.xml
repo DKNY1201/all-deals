@@ -35,4 +35,9 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="title" value="Deal detail"/>
         <put-attribute name="content" value="/WEB-INF/views/deal-detail.jsp"/>
     </definition>
+
+    <definition name="deal-list" extends="baseLayout">
+        <put-attribute name="title" value="List Deal"/>
+        <put-attribute name="content" value="/WEB-INF/views/deal-list.jsp"/>
+    </definition>
 </tiles-definitions>

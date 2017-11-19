@@ -17,4 +17,8 @@ public interface DealService {
     List<Deal> getFrontpageDeals();
 
     Deal findOne(Long dealId);
+
+    List<Deal> findAll();
+
+    List<Deal> findDealsByCategory(int category);
 }

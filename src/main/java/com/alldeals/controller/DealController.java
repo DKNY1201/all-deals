@@ -78,4 +78,16 @@ public class DealController {
         model.addAttribute("deal", dealService.findOne(id));
         return "deal-detail";
     }
+
+    @GetMapping(value = {"/categories/{categoryId}"})
+    public String listDeal(@PathVariable("categoryId") Integer categoryId, Model model) {
+        if (categoryId == 0) {
+            model.addAttribute("deals", dealService.findAll());
+        } else {
+            model.addAttribute("deals", dealService.findDealsByCategory(categoryId));
+        }
+
+        model.addAttribute("categories", dealCategoryService.findAll());
+        return "deal-list";
+    }
 }

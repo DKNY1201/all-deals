@@ -36,12 +36,31 @@
     <div class="container frontpage-deals">
         <h1>Frontpage deals</h1>
         <div class="row">
-            <c:forEach items="${frontpageDeals}" var="frontpageDeal" varStatus="status">
+            <c:forEach items="${frontpageDeals}" var="deal" varStatus="status">
                 <div class="col-lg-3">
-                    <img class="rounded-circle" src="<c:url value="/img/deals/${frontpageDeal.dealTitle}"></c:url>.jpg" alt="${frontpageDeal.dealTitle}" width="140" height="140">
-                    <h2>${frontpageDeal.dealTitle}</h2>
-                    <p>${frontpageDeal.description}</p>
-                    <p><a class="btn btn-success" href="<spring:url value="/deals/detail/${frontpageDeal.id}"/>" role="button">View details &raquo;</a></p>
+                    <%--<img class="rounded-circle" src="<c:url value="/img/deals/${frontpageDeal.dealTitle}"></c:url>.jpg" alt="${frontpageDeal.dealTitle}" width="140" height="140">--%>
+                    <%--<h2>${frontpageDeal.dealTitle}</h2>--%>
+                    <%--<p>${frontpageDeal.description}</p>--%>
+                    <%--<p><a class="btn btn-success" href="<spring:url value="/deals/detail/${frontpageDeal.id}"/>" role="button">View details &raquo;</a></p>--%>
+
+                    <div class="deal">
+                        <a href="<spring:url value="/deals/detail/${deal.id}"/>">
+                            <div class="image">
+                                <img class="img-fluid" src="<c:url value="/img/deals/${deal.dealTitle}"></c:url>.jpg" alt="${deal.dealTitle}">
+                            </div>
+                            <div class="store">${deal.store.name}</div>
+                            <div class="deal-title">${deal.dealTitle}</div>
+                            <div class="price-user">
+                                <div class="price">
+                                    $${deal.price}
+                                </div>
+                                <div class="user">
+                                    <img class="rounded-circle" src="<c:url value="/img/users/${deal.user.email}"></c:url>.jpg" width="20px" height="20px">
+                                </div>
+                            </div>
+                            <div class="comment"><i class="fa fa-commenting-o" aria-hidden="true"></i> 149</div>
+                        </a>
+                    </div>
                 </div><!-- /.col-lg-4 -->
             </c:forEach>
         </div><!-- /.row -->
