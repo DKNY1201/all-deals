@@ -237,6 +237,12 @@ header nav.navbar .navbar-brand .high-light {
     padding: 0 10px;
 }
 
+.filters .filter {
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 10px;
+}
+
 .filters .filter-title {
     font-size: 18px;
     border-bottom: 1px dotted #ccc;
@@ -292,6 +298,10 @@ footer ul li {
     padding-bottom: 15px;
     border-bottom: 1px dotted #ccc;
     margin-bottom: 10px;
+}
+
+.store-detail .store-name img {
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
 }
 
 .store-detail .store-description {

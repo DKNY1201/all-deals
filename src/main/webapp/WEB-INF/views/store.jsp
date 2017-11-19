@@ -8,14 +8,6 @@
     <div class="row">
         <div class="col-lg-3">
             <div class="filters">
-                <div class="store-detail">
-                    <h3 class="store-name">
-                        <img class="img-fluid" src="<c:url value="/img/stores/${store.name}"></c:url>.png" alt="${store.name}">
-                    </h3>
-                    <div class="store-description">
-                        ${store.description}
-                    </div>
-                </div>
                 <div class="filter">
                     <h3 class="filter-title">
                         Related Stores
@@ -25,6 +17,14 @@
                             <li><a href="<spring:url value="/stores/${store.id}"/>">${store.name}</a></li>
                         </c:forEach>
                     </ul>
+                </div>
+                <div class="store-detail">
+                    <h3 class="store-name">
+                        <img class="img-fluid" src="<c:url value="/img/stores/${store.name}"></c:url>.png" alt="${store.name}">
+                    </h3>
+                    <div class="store-description">
+                        ${store.description}
+                    </div>
                 </div>
             </div>
         </div>

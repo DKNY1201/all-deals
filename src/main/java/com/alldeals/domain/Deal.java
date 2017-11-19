@@ -58,7 +58,7 @@ public class Deal {
     @Transient
     private MultipartFile dealImage;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "user_id")
     private User user;
 

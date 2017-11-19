@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <main role="main">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -16,7 +17,7 @@
                     <div class="container">
                         <div class="carousel-caption text-left">
                             <h1>${featureDeal.dealTitle}</h1>
-                            <p>${featureDeal.description}</p>
+                            <p>${fn:substring(featureDeal.description, 0, 100)}</p>
                             <p><a class="btn btn-lg btn-success" href="<spring:url value="/deals/detail/${featureDeal.id}"/>" role="button">Deal detail</a></p>
                         </div>
                     </div>
@@ -38,11 +39,6 @@
         <div class="row">
             <c:forEach items="${frontpageDeals}" var="deal" varStatus="status">
                 <div class="col-lg-3">
-                    <%--<img class="rounded-circle" src="<c:url value="/img/deals/${frontpageDeal.dealTitle}"></c:url>.jpg" alt="${frontpageDeal.dealTitle}" width="140" height="140">--%>
-                    <%--<h2>${frontpageDeal.dealTitle}</h2>--%>
-                    <%--<p>${frontpageDeal.description}</p>--%>
-                    <%--<p><a class="btn btn-success" href="<spring:url value="/deals/detail/${frontpageDeal.id}"/>" role="button">View details &raquo;</a></p>--%>
-
                     <div class="deal">
                         <a href="<spring:url value="/deals/detail/${deal.id}"/>">
                             <div class="image">
