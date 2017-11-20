@@ -118,3 +118,9 @@ Their loyalty program is called My Best Buy, and it’s free to join. My Best Bu
 
 If you frequently shop at Best Buy you might want to consider signing up for their store credit card, which offers 5% in rewards on all Best Buy purchases.');
 INSERT INTO `store` (`store_id`, `store_name`, `description`) VALUES (6, 'Other', 'Other');
+
+INSERT INTO `blog_cat` VALUES (1, 'Video Games', 'Video Games');
+INSERT INTO `blog_cat` VALUES (2, 'Entertainment', 'Entertainment');
+INSERT INTO `blog_cat` VALUES (3, 'Reviews', 'Reviews');
+INSERT INTO `blog_cat` VALUES (4, 'Tech & Electronic', 'Tech & Electronic');
+INSERT INTO `blog_cat` VALUES (5, 'Consumer News', 'Consumer News');
