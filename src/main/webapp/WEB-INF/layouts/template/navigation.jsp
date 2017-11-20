@@ -20,7 +20,7 @@
                     <a href="<spring:url value="/stores/1"/>" class="nav-link">Store</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<spring:url value="/blog/0"/>" class="nav-link">Blog</a>
+                    <a href="<spring:url value="/blog/categories/0"/>" class="nav-link">Blog</a>
                 </li>
             </ul>
             <ul class="navbar-nav">

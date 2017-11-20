@@ -12,6 +12,4 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface BlogCategoryRepository extends CrudRepository<BlogCategory, Integer>{
-//    @Query(value = "SELECT * FROM deal_cat dc WHERE dc.deal_cat_name = :dealCatName", nativeQuery = true)
-//    DealCategory getDealCategoryByName(@Param("dealCatName") String dealCatName);
 }

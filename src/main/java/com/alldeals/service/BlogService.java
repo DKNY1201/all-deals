@@ -14,4 +14,6 @@ public interface BlogService {
     Blog findOne(Long blogId);
 
     List<Blog> findAll();
+
+    List<Blog> findBlogsByCategory(Integer catId);
 }
