@@ -19,3 +19,7 @@
 		</p>
 	</div>
 	</c:forEach>
+</div>
+<div>
+	<button type="submit" class="btn btn-primary"><spring:message code="create" /></button>
+</div>

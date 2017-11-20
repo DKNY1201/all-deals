@@ -4,6 +4,7 @@ package com.alldeals.service;
 import com.alldeals.domain.BlogArticle;
 import com.alldeals.repository.BlogArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class BlogArticleServiceImpl implements BlogArticleService{
 	}
 
 	@Override
+	@PreAuthorize("hasRole('ADMIN')")
 	public BlogArticle save(BlogArticle blogArticle) {
 		
 		
@@ -37,7 +39,7 @@ public class BlogArticleServiceImpl implements BlogArticleService{
 	@Override
 	public BlogArticle get(int id) {
 		
-		return  blogArticleRepository.findOne(id);
+		return blogArticleRepository.findOne(id);
 	}
 
 }
