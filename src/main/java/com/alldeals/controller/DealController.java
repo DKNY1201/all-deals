@@ -3,10 +3,7 @@ package com.alldeals.controller;
 import com.alldeals.domain.Deal;
 import com.alldeals.domain.DealCategory;
 import com.alldeals.domain.Store;
-import com.alldeals.service.DealCategoryService;
-import com.alldeals.service.DealService;
-import com.alldeals.service.StoreService;
-import com.alldeals.service.UserService;
+import com.alldeals.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,14 +30,12 @@ public class DealController {
     @Autowired
     DealService dealService;
 
-    @Autowired
-    UserService userService;
-
     @GetMapping("/post")
     public String postDealForm(@ModelAttribute("deal") Deal deal, Model model) {
         model.addAttribute("categories", dealCategoryService.findAll());
         model.addAttribute("stores", storeService.findAll());
         model.addAttribute("user", deal.getUser());
+        model.addAttribute("comments", deal.getComments());
         return "deal-post";
     }
 

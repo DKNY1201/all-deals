@@ -20,13 +20,23 @@ function formatDate(date) {
     if (month.length < 2) month = '0' + month;
     if (day.length < 2) day = '0' + day;
 
-    return [month, day, year].join('/');
+    return [month, day, year].join('-');
+}
+
+function generateCommentItem(title, postingTime, content) {
+    const time = formatDate(postingTime);
+
+    $(".comment-list").prepend($("<div>").addClass("comment-item")
+        .append($("<div>").addClass("comment-title").text(title))
+        .append($("<div>").addClass("comment-time").text(time))
+        .append($("<div>").addClass("comment-content").text(content)));
 }
 
 $(document).ready(function () {
     const contextRoot = "/" + window.location.pathname.split('/')[1];
 
     $(".comment-btn").on("click", function () {
+        const self = $(this);
         var data = $("#comment-form").serialize();
 
         const dataToSend = JSON.stringify(serializeObject($('#comment-form')));
@@ -39,22 +49,23 @@ $(document).ready(function () {
             data : dataToSend,
             contentType : 'application/json',
             success : function(response) {
-                $('.error').hide();
-                $("#success").append('<hr>' + formatDate(response.postingTime) + '<br/>' + response.content + '<br/> ');
-                $('#success').show();
+                $('.error').text("");
+                self.closest('form').find("input[type=text], textarea").val("");
+                generateCommentItem(response.title, response.postingTime, response.content);
             },
             error : function(errorObject) {
                 if (errorObject.responseJSON.errorType === "CommentValidationError") {
                     const errors = errorObject.responseJSON.errors;
+                    $('.error').text("");
                     $.each(errors, function (i, error) {
                         const errMsg = error.message;
 
                         if (errMsg.indexOf("Title") !== -1) {
-                            $(".title-error-message").append(errMsg);
+                            $(".title-error-message").text(errMsg);
                         }
 
                         if (errMsg.indexOf("Content") !== -1) {
-                            $(".content-error-message").append(errMsg);
+                            $(".content-error-message").text(errMsg);
                         }
                     })
                 } else {

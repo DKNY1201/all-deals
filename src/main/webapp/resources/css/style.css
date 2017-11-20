@@ -389,3 +389,51 @@ footer ul li {
 .store-deal .big-button button {
     width: 100%;
 }
+
+.comment {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #cccccc;
+}
+
+.comment h3 {
+    font-size: 28px;
+}
+
+.comment .let-us-know {
+    font-size: 14px;
+    color: #777;
+}
+
+.comment .comment-list {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment .comment-list .comment-item {
+    border: 1px dashed #eee;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.comment .comment-list .comment-item .comment-title {
+    padding: 5px 10px;
+    background: #eee;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.comment .comment-list .comment-item .comment-time {
+    color: #666666;
+    font-size: 12px;
+    padding: 5px 10px;
+    font-style: italic;
+}
+
+.comment .comment-list .comment-item .comment-content {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+

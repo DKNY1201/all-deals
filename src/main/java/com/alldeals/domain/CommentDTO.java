@@ -3,6 +3,8 @@ package com.alldeals.domain;
 /**
  * Created by thanhhuyle on 11/16/17.
  */
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,8 +13,10 @@ public class CommentDTO implements Serializable {
 
     private Date postingTime;
 
+    @NotEmpty(message = "{NotEmpty.validation}")
     private String title;
 
+    @NotEmpty(message = "{NotEmpty.validation}")
     private String content;
 
     public CommentDTO() {}

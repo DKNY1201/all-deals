@@ -3,6 +3,7 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="deal-detail inner-wrapper">
     <div class="deal-id" data-dealid="${deal.id}" hidden></div>
@@ -15,7 +16,7 @@
                 Price: $${deal.price}
             </div>
             <div class="view-comment">
-                219,691 Views | 940 Comments
+                219,691 Views | ${deal.comments.size()} Comments
             </div>
             <div class="description">
                 ${deal.description}
@@ -33,28 +34,34 @@
         </div>
     </div>
     <div class="comment">
-        <div class="comment-list">
-            <div class="comment-item">
-
+        <div class="comment-send">
+            <h3>Comment</h3>
+            <p class="let-us-know">What do you think about this deal?</p>
+            <form id="comment-form">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Comment title" name="title" />
+                    <div class="title-error-message error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea name="content" class="form-control" id="content" placeholder="Comment content"></textarea>
+                    <div class="content-error-message error"></div>
+                </div>
+                <button type="button" class="btn btn-success comment-btn">Comment</button>
+            </form>
+            <div id="success" class="alert alert-success">
+                You have been commented successfully.
             </div>
         </div>
-        <h3>Comment</h3>
-        <p class="let-us-know">What do you think about this deal?</p>
-        <form id="comment-form">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Comment title" name="title" />
-                <div class="title-error-message error"></div>
-            </div>
-            <div class="form-group">
-                <label for="content">Content</label>
-                <textarea name="content" class="form-control" id="content" placeholder="Comment content"></textarea>
-                <div class="content-error-message error"></div>
-            </div>
-            <button type="button" class="btn btn-success comment-btn">Comment</button>
-        </form>
-        <div id="success" class="alert alert-success">
-            You have been commented successfully.
+        <div class="comment-list">
+            <c:forEach items="${deal.comments}" var="comment">
+                <div class="comment-item">
+                    <div class="comment-title">${comment.title}</div>
+                    <div class="comment-time"><fmt:formatDate pattern="MM-dd-yyyy HH:mm:ss" value="${comment.postingTime}" /></div>
+                    <div class="comment-content">${comment.content}</div>
+                </div>
+            </c:forEach>
         </div>
     </div>
 </div>
