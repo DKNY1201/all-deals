@@ -2,8 +2,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <div class="deal-detail inner-wrapper">
+    <div class="deal-id" data-dealid="${deal.id}" hidden></div>
     <h1 class="deal-title">
         ${deal.dealTitle}
     </h1>
@@ -28,6 +30,31 @@
                 <img class="profile-image-thumb" src="<c:url value="/img/users/${deal.user.email}"></c:url>.jpg" width="20px">
                 <p>${deal.user.firstName} ${deal.user.lastName} posted this deal.</p>
             </div>
+        </div>
+    </div>
+    <div class="comment">
+        <div class="comment-list">
+            <div class="comment-item">
+
+            </div>
+        </div>
+        <h3>Comment</h3>
+        <p class="let-us-know">What do you think about this deal?</p>
+        <form id="comment-form">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Comment title" name="title" />
+                <div class="title-error-message error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea name="content" class="form-control" id="content" placeholder="Comment content"></textarea>
+                <div class="content-error-message error"></div>
+            </div>
+            <button type="button" class="btn btn-success comment-btn">Comment</button>
+        </form>
+        <div id="success" class="alert alert-success">
+            You have been commented successfully.
         </div>
     </div>
 </div>

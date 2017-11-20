@@ -61,5 +61,5 @@
             </label>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary"><spring:message code="button.postdeal" /></button>
+    <button type="submit" class="btn btn-success"><spring:message code="button.postdeal" /></button>
 </form:form>

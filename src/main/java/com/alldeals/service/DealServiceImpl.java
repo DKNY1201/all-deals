@@ -35,7 +35,6 @@ public class DealServiceImpl implements DealService {
 
         if (user != null) {
             user.addDeal(deal);
-//            userService.save(user);
         }
 
         dealRepository.save(deal);

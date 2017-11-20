@@ -35,5 +35,5 @@
         </label>
     </div>
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    <button type="submit" class="btn btn-primary"><spring:message code="button.signin" /></button>
+    <button type="submit" class="btn btn-success"><spring:message code="button.signin" /></button>
 </form>

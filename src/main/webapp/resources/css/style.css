@@ -83,10 +83,13 @@ body {
     }
 }
 
-
 .error {
     color: red;
     font-size: 13px;
+}
+
+#success {
+    display: none;
 }
 
 .wrapper {

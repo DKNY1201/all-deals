@@ -56,5 +56,5 @@
         <form:input type="file" class="form-control" id="profile-picture" path="profilePicture" />
         <div class="error"><form:errors path="profilePicture" /></div>
     </div>
-    <button type="submit" class="btn btn-primary"><spring:message code="button.signup" /></button>
+    <button type="submit" class="btn btn-success"><spring:message code="button.signup" /></button>
 </form:form>
