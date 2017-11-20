@@ -67,6 +67,14 @@ public class User implements Serializable {
 	)
 	private List<Deal> deals = new ArrayList<>();
 
+//	@OneToMany(
+//			mappedBy = "user",
+//			cascade = CascadeType.ALL,
+//			fetch = FetchType.EAGER,
+//			orphanRemoval = true
+//	)
+//	private List<Blog> blogs = new ArrayList<>();
+
 	public int getId() {
 		return id;
 	}
@@ -165,4 +173,22 @@ public class User implements Serializable {
 		deals.remove(deal);
 		deal.setUser(null);
 	}
+
+//	public List<Blog> getBlogs() {
+//		return blogs;
+//	}
+//
+//	public void setBlogs(List<Blog> blogs) {
+//		this.blogs = blogs;
+//	}
+//
+//	public void addBlog(Blog blog) {
+//		blogs.add(blog);
+//		blog.setUser(this);
+//	}
+//
+//	public void removeBlog(Blog blog) {
+//		blogs.remove(blog);
+//		blog.setUser(null);
+//	}
 }

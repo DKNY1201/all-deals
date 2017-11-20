@@ -405,11 +405,20 @@ footer ul li {
     color: #777;
 }
 
-.comment .comment-list {
+.comment .commented {
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+
+h3.people-think{
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    display: inline-block;
 }
 
 .comment .comment-list .comment-item {

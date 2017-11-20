@@ -54,14 +54,18 @@
                 You have been commented successfully.
             </div>
         </div>
-        <div class="comment-list">
-            <c:forEach items="${deal.comments}" var="comment">
-                <div class="comment-item">
-                    <div class="comment-title">${comment.title}</div>
-                    <div class="comment-time"><fmt:formatDate pattern="MM-dd-yyyy HH:mm:ss" value="${comment.postingTime}" /></div>
-                    <div class="comment-content">${comment.content}</div>
-                </div>
-            </c:forEach>
+
+        <div class="commented">
+            <h3 class="people-think">See what people think</h3>
+            <div class="comment-list">
+                <c:forEach items="${deal.comments}" var="comment">
+                    <div class="comment-item">
+                        <div class="comment-title">${comment.title}</div>
+                        <div class="comment-time"><fmt:formatDate pattern="MM-dd-yyyy HH:mm:ss" value="${comment.postingTime}" /></div>
+                        <div class="comment-content">${comment.content}</div>
+                    </div>
+                </c:forEach>
+            </div>
         </div>
     </div>
 </div>
