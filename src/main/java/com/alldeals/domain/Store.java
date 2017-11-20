@@ -22,6 +22,7 @@ public class Store {
     @Column(name = "store_name")
     private String name;
 
+    @Column(name="description", columnDefinition="TEXT")
     private String description;
 
 //    @OneToMany(cascade = CascadeType.ALL)

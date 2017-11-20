@@ -2,6 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <div class="inner-wrapper store">
     <div class="row">
@@ -30,25 +31,22 @@
         <div class="col-lg-9">
             <div class="row">
                 <c:forEach items="${deals}" var="deal">
-                    <div class="col-lg-3">
-                        <div class="deal">
-                            <a href="<spring:url value="/deals/detail/${deal.id}"/>">
-                                <div class="image">
-                                    <img class="img-fluid" src="<c:url value="/img/deals/${deal.dealTitle}"></c:url>.jpg" alt="${deal.dealTitle}">
+                    <div class="col-lg-12">
+                        <a class="store-deal-link" href="<spring:url value="/deals/detail/${deal.id}"/>">
+                            <div class="store-deal row">
+                                <div class="price col-lg-2">
+                                    $${deal.price}
                                 </div>
-                                <div class="store">${deal.store.name}</div>
-                                <div class="deal-title">${deal.dealTitle}</div>
-                                <div class="price-user">
-                                    <div class="price">
-                                        $${deal.price}
-                                    </div>
-                                    <div class="user">
-                                        <img class="rounded-circle" src="<c:url value="/img/users/${deal.user.email}"></c:url>.jpg" width="20px" height="20px">
-                                    </div>
+                                <div class="main-deal col-lg-7">
+                                    <div class="deal-cat">${deal.dealCategory.name}</div>
+                                    <div class="deal-title">${deal.dealTitle}</div>
+                                    <div class="deal-description">${fn:substring(deal.description, 0, 100)}</div>
                                 </div>
-                                <div class="comment"><i class="fa fa-commenting-o" aria-hidden="true"></i> 149</div>
-                            </a>
-                        </div>
+                                <div class="big-button col-lg-3">
+                                    <button class="btn btn-success">Get Offer</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </c:forEach>
             </div>
