@@ -13,7 +13,7 @@
         <div class="carousel-inner">
             <c:forEach items="${featureDeals}" var="featureDeal" varStatus="status">
                 <div class="carousel-item <c:if test="${status.first}">active</c:if>">
-                    <img class="first-slide" src="<c:url value="/img/deals/${featureDeal.dealTitle}"></c:url>.jpg" alt="${featureDeal.dealTitle}">
+                    <img class="first-slide img-fluid" src="<c:url value="/img/deals/${featureDeal.dealTitle}"></c:url>.jpg" alt="${featureDeal.dealTitle}">
                     <div class="container">
                         <div class="carousel-caption text-left">
                             <h1>${featureDeal.dealTitle}</h1>
@@ -54,7 +54,7 @@
                                     <img class="rounded-circle" src="<c:url value="/img/users/${deal.user.email}"></c:url>.jpg" width="20px" height="20px">
                                 </div>
                             </div>
-                            <div class="comment"><i class="fa fa-commenting-o" aria-hidden="true"></i> 149</div>
+                            <div class="comment"><i class="fa fa-commenting-o" aria-hidden="true"></i> ${deal.comments.size()}</div>
                         </a>
                     </div>
                 </div><!-- /.col-lg-4 -->

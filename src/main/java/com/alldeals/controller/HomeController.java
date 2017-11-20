@@ -1,5 +1,6 @@
 package com.alldeals.controller;
 
+import com.alldeals.service.CommentService;
 import com.alldeals.service.DealService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @Autowired
     DealService dealService;
+
+    @Autowired
+    CommentService commentService;
 
     @GetMapping({"/", "/home"})
     public String home(Model model) {

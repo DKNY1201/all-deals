@@ -38,7 +38,7 @@
                                         <img class="rounded-circle" src="<c:url value="/img/users/${deal.user.email}"></c:url>.jpg" width="20px" height="20px">
                                     </div>
                                 </div>
-                                <div class="comment"><i class="fa fa-commenting-o" aria-hidden="true"></i> 149</div>
+                                <div class="comment"><i class="fa fa-commenting-o" aria-hidden="true"></i> ${deal.comments.size()}</div>
                             </a>
                         </div>
                     </div>
