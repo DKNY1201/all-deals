@@ -20,12 +20,15 @@ public class BlogArticle implements Serializable {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "blogarticle_id")
     private int id;
 
     @NotBlank(message = "{NotBlank.validation}")
     private String title;
+
+    @NotEmpty
+    private String description;
 
     @NotBlank
     @Size(min = 500, message = "{Size.blogContent}")
@@ -47,11 +50,8 @@ public class BlogArticle implements Serializable {
     @JoinColumn(name = "user_id")
     private User contributor;
 
-    private Boolean isFeature;
-    private Boolean isFrontPage;
 
-
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -65,6 +65,14 @@ public class BlogArticle implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getContent() {
@@ -105,21 +113,5 @@ public class BlogArticle implements Serializable {
 
     public void setContributor(User contributor) {
         this.contributor = contributor;
-    }
-
-    public Boolean getFeature() {
-        return isFeature;
-    }
-
-    public void setFeature(Boolean feature) {
-        isFeature = feature;
-    }
-
-    public Boolean getFrontPage() {
-        return isFrontPage;
-    }
-
-    public void setFrontPage(Boolean frontPage) {
-        isFrontPage = frontPage;
     }
 }

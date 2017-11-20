@@ -3,12 +3,23 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
+<%--<script>--%>
+    <%--$( function() {--%>
+        <%--$( "#datepicker" ).datepicker();--%>
+    <%--} );--%>
+<%--</script>--%>
 <h1 class="title"><spring:message code="blog.title" /></h1>
 <form:form modelAttribute="newBlog" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="title"><spring:message code="label.title" /></label>
         <form:input class="form-control" id="title" placeholder="write blog title here" path="title" />
         
+        <div class="error"><form:errors path="title" /></div>
+    </div>
+    <div class="form-group">
+        <label for="title"><spring:message code="label.blogDescription" /></label>
+        <form:input class="form-control" id="title" placeholder="write blog title here" path="title" />
+
         <div class="error"><form:errors path="title" /></div>
     </div>
         

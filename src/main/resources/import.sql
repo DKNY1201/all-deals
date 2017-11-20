@@ -132,3 +132,15 @@ VALUES
       'https://www.bestbuy.com/site/samsung-store/samsung-galaxy-cell-phones/pcmcat1509459420433.c?ref=8575135&loc=af552e60ccb611e7914a3a4e4378d8700INT&acampID=af552e60ccb611e7914a3a4e4378d8700INT&id=pcmcat1509459420433',
       'Best Buy.com has select Samsung Galaxy Note8, S8 or S8+ Smartphone on sale listed below when you \"Buy & Activate w/ a 24-Monthly Installment Plan\" valid for Verizon or Sprint Carriers. Shipping is free, otherwise, select free in-store pickup as an alternative option. Thanks waterfront\r\n\r\nNote, availability for in-store pickup may vary depending on location.\r\n\r\nAvailable Options\r\n\r\n    64GB Samsung Galaxy S8 (various colors)\r\n        Verizon: $15.41/month for 24-Months ~ $369.84\r\n        Sprint: $16.67/month for 24-Months ~ $400.08\r\n\r\n    64GB Samsung Galaxy S8+ (various colors)\r\n        Verizon: $19.41/month for 24-Months ~ $465.84\r\n        Sprint: $20.83/month for 24-Months ~ $499.92\r\n\r\n    64GB Samsung Galaxy Note8 (various colors)\r\n        Verizon: $24.41/month for 24-Months ~ $585.84\r\n        Sprint: $25.41/month for 24-Months ~ $609.84\r\n\r\n',
       b'1', b'1', '2017-11-18 17:21:15', 150.00, 1, 3, 2);
+
+INSERT INTO blogCategory VALUES (1, 'Electronics');
+INSERT INTO blogCategory VALUES (2, 'Furniture');
+INSERT INTO blogCategory VALUES (3, 'Appliances');
+INSERT INTO blogCategory VALUES (4, 'Assets');
+
+INSERT INTO `blogArticle` (`blogarticle_id`,`title`,`content`,`description`,`publishDate`,`blog_cat_id`,`user_id`)  (1, 'Where to Find the Best Video Game Deals for Black Friday 2017',
+                          'If you have been holding on to your old gaming console all year in hopes of scoring a deal during Black Friday, we are here to help. While we have already',
+                          'If you have been holding on to your old gaming console all year in hopes of scoring a deal during Black Friday, we are here to help. While we have already seen some video game deals come and go in the lead up to the big day -- like this Walmart Xbox One S Bundle -- most of the best discounts will have to wait for Black Friday.
+
+                          If you are gearing up to fight off the onslaught of like-minded Black Friday shoppers, we would encourage you to do your digging. Most retailers are offering similar prices, so when it comes to video game console deals, it is all about the extras. Read on to find who will have what when it comes to video game deals this Black Friday. Spoiler: For the newer consoles, you are likely to be disappointed.',
+                          '2017-11-18 17:21:15',1,1);

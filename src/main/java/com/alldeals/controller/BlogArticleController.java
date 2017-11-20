@@ -34,11 +34,10 @@ public class BlogArticleController {
 	@Autowired
 	private BlogCategoryService blogCategoryService;
 
-    @RequestMapping(value= "/BlogList", method = RequestMethod.GET)
+    @RequestMapping(value= "/blogList", method = RequestMethod.GET)
     public String getBlogList( Model model) {
-        List<BlogArticle> blogArticleyList = blogArticleService.getAll();
-        System.out.print("88888888:"+blogArticleyList.size());
-        model.addAttribute("blogArticleList", blogArticleyList);
+        List<BlogArticle> blogArticles = blogArticleService.getAll();
+        model.addAttribute("blogArticleList", blogArticles);
         return "BlogList";
     }
 
