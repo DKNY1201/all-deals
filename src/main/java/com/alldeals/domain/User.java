@@ -12,6 +12,8 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlTransient;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
@@ -62,18 +64,18 @@ public class User implements Serializable {
 	@OneToMany(
 			mappedBy = "user",
 			cascade = CascadeType.ALL,
-			fetch = FetchType.EAGER,
 			orphanRemoval = true
 	)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Deal> deals = new ArrayList<>();
 
-//	@OneToMany(
-//			mappedBy = "user",
-//			cascade = CascadeType.ALL,
-//			fetch = FetchType.EAGER,
-//			orphanRemoval = true
-//	)
-//	private List<Blog> blogs = new ArrayList<>();
+	@OneToMany(
+			mappedBy = "user",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private List<Blog> blogs = new ArrayList<>();
 
 	public int getId() {
 		return id;
@@ -174,21 +176,21 @@ public class User implements Serializable {
 		deal.setUser(null);
 	}
 
-//	public List<Blog> getBlogs() {
-//		return blogs;
-//	}
-//
-//	public void setBlogs(List<Blog> blogs) {
-//		this.blogs = blogs;
-//	}
-//
-//	public void addBlog(Blog blog) {
-//		blogs.add(blog);
-//		blog.setUser(this);
-//	}
-//
-//	public void removeBlog(Blog blog) {
-//		blogs.remove(blog);
-//		blog.setUser(null);
-//	}
+	public List<Blog> getBlogs() {
+		return blogs;
+	}
+
+	public void setBlogs(List<Blog> blogs) {
+		this.blogs = blogs;
+	}
+
+	public void addBlog(Blog blog) {
+		blogs.add(blog);
+		blog.setUser(this);
+	}
+
+	public void removeBlog(Blog blog) {
+		blogs.remove(blog);
+		blog.setUser(null);
+	}
 }
