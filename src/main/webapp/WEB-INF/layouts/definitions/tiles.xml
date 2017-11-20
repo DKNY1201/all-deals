@@ -45,4 +45,18 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="title" value="Stores"/>
         <put-attribute name="content" value="/WEB-INF/views/store.jsp"/>
     </definition>
+
+    <definition name="blogDetails" extends="baseLayout">
+        <put-attribute name="title" value="Blog Details"/>
+        <put-attribute name="content" value="/WEB-INF/views/blogDetails.jsp"/>
+    </definition>
+    <definition name="BlogList" extends="baseLayout">
+        <put-attribute name="title" value="Blog list"/>
+        <put-attribute name="content" value="/WEB-INF/views/BlogList.jsp"/>
+    </definition>
+    <definition name="BlogForm" extends="baseLayout">
+        <put-attribute name="title" value="Blog form"/>
+        <put-attribute name="content" value="/WEB-INF/views/BlogForm.jsp"/>
+    </definition>
+
 </tiles-definitions>

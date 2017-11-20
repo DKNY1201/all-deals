@@ -64,10 +64,19 @@ public class User implements Serializable {
 	@OneToMany(
 			mappedBy = "user",
 			cascade = CascadeType.ALL,
-			fetch = FetchType.EAGER,
+			fetch = FetchType.LAZY,
 			orphanRemoval = true
 	)
 	private List<Deal> deals = new ArrayList<>();
+
+	@OneToMany(
+			mappedBy = "contributor",
+			cascade = CascadeType.ALL,
+			fetch = FetchType.LAZY,
+			orphanRemoval = true
+	)
+	private List<BlogArticle> blogArticles = new ArrayList<>();
+
 
 	public int getId() {
 		return id;
@@ -167,4 +176,22 @@ public class User implements Serializable {
 		deals.remove(deal);
 		deal.setUser(null);
 	}
+
+	public List<BlogArticle> getBlogArticles() {
+		return blogArticles;
+	}
+
+	public void setBlogArticles(List<BlogArticle> blogArticles) {
+		this.blogArticles = blogArticles;
+	}
+
+//	public void addDeal(Deal deal) {
+//		deals.add(deal);
+//		deal.setUser(this);
+//	}
+//
+//	public void removeDeal(Deal deal) {
+//		deals.remove(deal);
+//		deal.setUser(null);
+//	}
 }
