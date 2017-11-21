@@ -15,12 +15,15 @@ function formatDate(date) {
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),
-        year = d.getFullYear();
+        year = d.getFullYear(),
+        hour = d.getHours(),
+        min = d.getMinutes(),
+        second = d.getSeconds();
 
     if (month.length < 2) month = '0' + month;
     if (day.length < 2) day = '0' + day;
 
-    return [month, day, year].join('-');
+    return [month, day, year].join('-') + ' ' + [hour, min, second].join(':');
 }
 
 function generateCommentItem(title, postingTime, content) {
