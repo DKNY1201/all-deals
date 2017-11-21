@@ -60,4 +60,9 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="title" value="Blog Detail"/>
         <put-attribute name="content" value="/WEB-INF/views/blog-detail.jsp"/>
     </definition>
+
+    <definition name="error-forbidden" extends="baseLayout">
+        <put-attribute name="title" value="Error"/>
+        <put-attribute name="content" value="/WEB-INF/views/error-forbidden.jsp"/>
+    </definition>
 </tiles-definitions>
