@@ -36,22 +36,22 @@
     <div class="comment">
         <div class="comment-send">
             <h3>Comment</h3>
-            <p class="let-us-know">What do you think about this deal?</p>
+            <p class="let-us-know"><label><spring:message code="comment.question"/></label></p>
             <form id="comment-form">
                 <div class="form-group">
-                    <label for="title">Title</label>
+                    <label for="title"><spring:message code="comment.title"/></label>
                     <input type="text" class="form-control" id="title" placeholder="Comment title" name="title" />
                     <div class="title-error-message error"></div>
                 </div>
                 <div class="form-group">
-                    <label for="content">Content</label>
+                    <label for="content"><spring:message code="comment.content"/></label>
                     <textarea name="content" class="form-control" id="content" placeholder="Comment content"></textarea>
                     <div class="content-error-message error"></div>
                 </div>
-                <button type="button" class="btn btn-success comment-btn">Comment</button>
+                <button type="button" class="btn btn-success comment-btn"><spring:message code="comment.comment"/></button>
             </form>
             <div id="success" class="alert alert-success">
-                You have been commented successfully.
+                <spring:message code="comment.success"/>
             </div>
         </div>
 
