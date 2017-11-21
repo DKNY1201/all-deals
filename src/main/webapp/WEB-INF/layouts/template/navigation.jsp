@@ -33,7 +33,7 @@
                     </li>
                 </sec:authorize>
                 <sec:authorize access="isAuthenticated()">
-                    <li class="nav-item">
+                    <li class="nav-item post-deal">
                         <a href="<spring:url value="/deals/post"/>" class="nav-link btn btn-outline-success post-a-deal">Post a Deal</a>
                     </li>
                     <li class="nav-item">

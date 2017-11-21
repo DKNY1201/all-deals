@@ -22,7 +22,6 @@ public class BlogController {
     @Autowired
     BlogCategoryService blogCategoryService;
 
-
     @Autowired
     BlogService blogService;
 
@@ -36,7 +35,7 @@ public class BlogController {
     public String postBlog(@Valid Blog blog, BindingResult bindingResult, HttpServletRequest request, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("categories", blogCategoryService.findAll());
-            return "deal-post";
+            return "blog-post";
         }
 
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
@@ -56,13 +55,13 @@ public class BlogController {
 
         return "redirect:/home";
     }
-//
-//    @GetMapping("/detail/{id}")
-//    public String dealDetail(@PathVariable("id") Long id, Model model) {
-//        model.addAttribute("deal", dealService.findOne(id));
-//        return "deal-detail";
-//    }
-//
+
+    @GetMapping("/detail/{id}")
+    public String dealDetail(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("blog", blogService.findOne(id));
+        return "blog-detail";
+    }
+
     @GetMapping(value = {"/categories/{categoryId}"})
     public String listBlog(@PathVariable("categoryId") Integer categoryId, Model model) {
         if (categoryId == 0) {
@@ -72,6 +71,6 @@ public class BlogController {
         }
 
         model.addAttribute("categories", blogCategoryService.findAll());
-        return "deal-list";
+        return "blog-list";
     }
 }

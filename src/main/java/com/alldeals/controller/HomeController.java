@@ -24,6 +24,7 @@ public class HomeController {
     public String home(Model model) {
         model.addAttribute("featureDeals", dealService.getFeatureDeals());
         model.addAttribute("frontpageDeals", dealService.getFrontpageDeals());
+
         return "home";
     }
 }
