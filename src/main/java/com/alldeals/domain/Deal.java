@@ -71,6 +71,13 @@ public class Deal implements Serializable{
     )
     private List<Comment> comments = new ArrayList<>();
 
+    public Deal() {}
+
+    public Deal(Long id, String dealTitle) {
+        this.id = id;
+        this.dealTitle = dealTitle;
+    }
+
     public Long getId() {
         return id;
     }
