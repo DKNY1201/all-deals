@@ -65,4 +65,9 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="title" value="Error"/>
         <put-attribute name="content" value="/WEB-INF/views/error-forbidden.jsp"/>
     </definition>
+
+    <definition name="deal-not-found" extends="baseLayout">
+        <put-attribute name="title" value="Deal not found"/>
+        <put-attribute name="content" value="/WEB-INF/views/deal-not-found.jsp"/>
+    </definition>
 </tiles-definitions>

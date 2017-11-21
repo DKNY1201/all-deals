@@ -3,13 +3,16 @@ package com.alldeals.controller;
 import com.alldeals.domain.Deal;
 import com.alldeals.domain.DealCategory;
 import com.alldeals.domain.Store;
+import com.alldeals.exception.DealNotFoundException;
 import com.alldeals.service.*;
+import com.alldeals.utils.UrlUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -70,6 +73,11 @@ public class DealController {
 
     @GetMapping("/detail/{id}")
     public String dealDetail(@PathVariable("id") Long id, Model model) {
+        Deal deal = dealService.findOne(id);
+
+        if (deal == null) {
+            throw new DealNotFoundException(id);
+        }
         model.addAttribute("deal", dealService.findOne(id));
         return "deal-detail";
     }
@@ -84,5 +92,13 @@ public class DealController {
 
         model.addAttribute("categories", dealCategoryService.findAll());
         return "deal-list";
+    }
+
+    @ExceptionHandler(DealNotFoundException.class)
+    public String handleError(HttpServletRequest req, DealNotFoundException exception, Model model) {
+        model.addAttribute("invalidDealId", exception.getDealId());
+        model.addAttribute("exception", exception);
+        model.addAttribute("url", UrlUtils.getFullURL(req));
+        return "deal-not-found";
     }
 }
