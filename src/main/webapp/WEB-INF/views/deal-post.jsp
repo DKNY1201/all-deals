@@ -18,12 +18,12 @@
     </div>
     <div class="form-group">
         <label for="price"><spring:message code="label.price" /></label>
-        <form:input class="form-control" placeholder="Deal Title" path="price" />
+        <form:input class="form-control" placeholder="Price" path="price" />
         <div class="error"><form:errors path="price" /></div>
     </div>
     <div class="form-group">
         <label for="description"><spring:message code="label.description" /></label>
-        <form:textarea path="description" class="form-control" ></form:textarea>
+        <form:textarea path="description" class="form-control"></form:textarea>
         <div class="error"><form:errors path="description" /></div>
     </div>
     <div class="form-group">
@@ -61,5 +61,5 @@
             </label>
         </div>
     </div>
-    <button type="submit" class="btn btn-success"><spring:message code="button.postdeal" /></button>
+    <button type="submit" class="btn btn-success"><spring:message code="button.post" /></button>
 </form:form>

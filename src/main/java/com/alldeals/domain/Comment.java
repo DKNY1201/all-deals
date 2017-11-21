@@ -3,7 +3,6 @@ package com.alldeals.domain;
 /**
  * Created by thanhhuyle on 11/16/17.
  */
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;

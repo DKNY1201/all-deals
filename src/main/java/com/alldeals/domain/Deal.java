@@ -1,7 +1,6 @@
 package com.alldeals.domain;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 import org.springframework.web.multipart.MultipartFile;
@@ -71,6 +70,13 @@ public class Deal implements Serializable{
             orphanRemoval = true
     )
     private List<Comment> comments = new ArrayList<>();
+
+    public Deal() {}
+
+    public Deal(Long id, String dealTitle) {
+        this.id = id;
+        this.dealTitle = dealTitle;
+    }
 
     public Long getId() {
         return id;

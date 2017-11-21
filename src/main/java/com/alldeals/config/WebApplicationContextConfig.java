@@ -1,5 +1,6 @@
 package com.alldeals.config;
 
+import com.alldeals.interceptor.AuthorizationInterceptor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -87,6 +88,7 @@ public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
 		LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
 		localeChangeInterceptor.setParamName("language");
 		registry.addInterceptor(localeChangeInterceptor);
+		registry.addInterceptor(new AuthorizationInterceptor()).addPathPatterns("/**/post");
 	}
 
 	@Bean
@@ -95,7 +97,6 @@ public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
 		resolver.setDefaultLocale(new Locale("en"));
 		return resolver;
 	}
-
 
 	@Bean(name = "validator")
 	public LocalValidatorFactoryBean validator() {

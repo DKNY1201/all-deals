@@ -5,7 +5,7 @@
 
 <c:url var="loginUrl" value="/login" />
 <h1 class="title"><spring:message code="login.title" /></h1>
-<form action="${loginUrl}" method="post">
+<form action="${loginUrl}" method="post" class="loggin-form">
     <c:if test="${param.error != null}">
         <div class="alert alert-danger">
             <p>Invalid username and password.</p>

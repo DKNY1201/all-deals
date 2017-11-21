@@ -61,7 +61,7 @@ public class RootApplicationContextConfig {
 		properties.put("hibernate.hbm2ddl.auto", "create");
 		properties.put("hibernate.show_sql", "false");
 		properties.put("hibernate.format_sql", "false");
-		properties.put("hibernate.hbm2ddl.import_files", "src/main/sql/import.sql");
+		properties.put("hibernate.hbm2ddl.import_files", "src/main/sql/populate.sql");
 		properties.put("hibernate.ejb.naming_strategy", "org.hibernate.cfg.ImprovedNamingStrategy");
 
 		properties.put("hibernate.c3p0.min_size", "2");
