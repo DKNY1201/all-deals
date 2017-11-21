@@ -49,6 +49,9 @@
                 <li class="nav-item">
                     <a href="?language=vn" class="nav-link">VN</a>
                 </li>
+                <li class="nav-item">
+                    <a href="?language=fr" class="nav-link">FR</a>
+                </li>
             </ul>
         </div>
     </nav>
