@@ -19,7 +19,7 @@ import com.alldeals.domain.Comment;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = WebApplicationContextConfig.class)
 @WebAppConfiguration
-public class CommentRestControllerTest {
+public class CommentControllerTest {
     @Autowired
     private WebApplicationContext wac;
     private MockMvc mockMvc;
