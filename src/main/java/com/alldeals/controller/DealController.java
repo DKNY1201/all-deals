@@ -68,7 +68,7 @@ public class DealController {
 
         dealService.save(deal);
 
-        return "redirect:/home";
+        return "redirect:/deals/categories/0";
     }
 
     @GetMapping("/detail/{id}")
